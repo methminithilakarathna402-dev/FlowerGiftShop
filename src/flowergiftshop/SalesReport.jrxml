@@ -1,0 +1,103 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="Blank_A4" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9e3d06f3-7762-4f41-9b2c-239250fc1781">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FlowerGiftShopDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<query language="sql"><![CDATA[SELECT
+    s.sale_id,
+    c.name AS customer_name,
+    p.product_name,
+    s.quantity,
+    s.total_price,
+    s.sale_date
+FROM sales s
+JOIN customers c ON s.customer_id = c.customer_id
+JOIN products p ON s.product_id = p.product_id
+ORDER BY s.sale_date DESC]]></query>
+	<field name="sale_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sale_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sale_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customers"/>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="products"/>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="total_price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="sale_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="sale_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="sale_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="f3d3891e-53b7-4c0c-b706-b42784212362" x="160" y="20" width="310" height="30">
+			<text><![CDATA[FLOWER GIFT SHOP - SALES REPORT]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="36" splitType="Stretch">
+		<element kind="staticText" uuid="60c2223b-6d11-4be4-8d9e-3e29a7dea77f" x="0" y="0" width="100" height="30">
+			<text><![CDATA[customer_name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8e33a83-b40e-4fdf-b55a-1f33b60d48bb"/>
+		</element>
+		<element kind="staticText" uuid="db196644-18a0-4ed0-9529-993c6af42356" x="120" y="0" width="100" height="30">
+			<text><![CDATA[product_name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cac30c0-866c-4d3d-befe-cc40f427e716"/>
+		</element>
+		<element kind="staticText" uuid="63b33bef-ecd9-4de5-a8fd-652269abedcd" x="250" y="0" width="100" height="30">
+			<text><![CDATA[quantity]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98f7488d-2c35-4d90-81e9-b238e2749cb3"/>
+		</element>
+		<element kind="staticText" uuid="eb2c4aff-c321-430b-8aeb-05d53f63d3a8" x="370" y="0" width="100" height="30">
+			<text><![CDATA[total_price]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ef5757b-2e28-4dfe-831d-e1da3c2885ed"/>
+		</element>
+		<element kind="staticText" uuid="634b9a10-69c1-425f-b190-d9b84fa1abcb" x="490" y="0" width="100" height="30">
+			<text><![CDATA[sale_date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb4a9986-7a96-4efd-b10d-985b911e2247"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<element kind="textField" uuid="9da5c6bc-9286-4a9b-b4f0-26b363b45317" x="0" y="0" width="100" height="30">
+				<expression><![CDATA[$F{customer_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8e33a83-b40e-4fdf-b55a-1f33b60d48bb"/>
+			</element>
+			<element kind="textField" uuid="d1c111e4-a114-430e-946f-2f61d1bbda1a" x="120" y="0" width="100" height="30">
+				<expression><![CDATA[$F{product_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cac30c0-866c-4d3d-befe-cc40f427e716"/>
+			</element>
+			<element kind="textField" uuid="0d9a4b28-a47f-4e78-b9c4-4329d5eae95f" x="250" y="0" width="100" height="30">
+				<expression><![CDATA[$F{quantity}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98f7488d-2c35-4d90-81e9-b238e2749cb3"/>
+			</element>
+			<element kind="textField" uuid="dd3c31e1-5721-4f19-990a-ca9a08622dfb" x="370" y="0" width="100" height="30">
+				<expression><![CDATA[$F{total_price}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ef5757b-2e28-4dfe-831d-e1da3c2885ed"/>
+			</element>
+			<element kind="textField" uuid="ca9acbc6-8ebd-4dba-a50d-bb6bd0835ee5" x="490" y="0" width="100" height="30">
+				<expression><![CDATA[$F{sale_date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb4a9986-7a96-4efd-b10d-985b911e2247"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
+
