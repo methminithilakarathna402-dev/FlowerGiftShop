@@ -79,6 +79,8 @@ The application includes a JasperReports Sales Report using data from multiple d
 
 ## Developer
 
-NIBM - Diploma in Computer System Design
+**Name:** D M R W Thilakarathna  
+**Student Index Number:** CODCSD253F-015  
 
+NIBM - Diploma in Computer System Design  
 Enterprise Application Development Coursework
